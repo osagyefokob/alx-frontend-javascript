@@ -29,20 +29,15 @@ class Director implements DirectorInterface {
   }
 }
 
-// Teacher class implementing TeacherInterface
-class Teacher implements TeacherInterface {
-  workFromHome(): string {
-    return "Cannot work from home";
-  }
-
-  getCoffeeBreak(): string {
-    return "Cannot have a break";
-  }
-
-  workTeacherTasks(): string {
-    return "Getting to work";
+// teachClass function
+export function teachClass(todayClass:Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else {
+    return "Teaching History";
   }
 }
+
 
 // createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
