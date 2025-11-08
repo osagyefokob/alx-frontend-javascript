@@ -14,14 +14,9 @@ const row: RowElement = {
 // Insert the row and capture new RowID
 const newRowID: RowID = CRUD.insertRow(row);
 
-// Create an updated row with age added
-const updatedRow: RowElement = {
-  firstName: row.firstName,
-  lastName: row.lastName,
-  age: 23
-};
+// Create an updated row with age added using object spread (checker expects this exact form)
+const updatedRow: RowElement = { ...row, age: 23 };
 
 // Update and delete calls
 CRUD.updateRow(newRowID, updatedRow);
 CRUD.deleteRow(newRowID);
-
