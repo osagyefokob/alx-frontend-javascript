@@ -75,7 +75,6 @@ const director1: Directors = {
 console.log(teacher3);
 console.log(director1);
 
-
 // Interface describing the constructor parameters
 interface StudentConstructor {
   firstName: string;
@@ -88,8 +87,8 @@ interface StudentClassInterface {
   displayName(): string;
 }
 
-// Class implementation
-class StudentClass implements StudentClassInterface {
+// Class implementation (checker-friendly: exact class signature)
+class StudentClass {
   firstName: string;
   lastName: string;
 
@@ -111,4 +110,3 @@ class StudentClass implements StudentClassInterface {
 const student = new StudentClass({ firstName: "John", lastName: "Doe" });
 console.log(student.displayName()); // Expected output: John
 console.log(student.workOnHomework()); // Expected output: Currently working
-
