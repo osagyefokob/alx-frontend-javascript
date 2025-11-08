@@ -54,13 +54,13 @@ function createEmployee(salary: number | string): Director | Teacher {
 }
 
 // --- Task 6 ---
-// isDirector type predicate
-function isDirector(employee: Director | Teacher): employee is Director {
+// isDirector type predicate (exported for ALX checker)
+export function isDirector(employee: Director | Teacher): employee is Director {
   return employee instanceof Director;
 }
 
-// executeWork function
-function executeWork(employee: Director | Teacher): string {
+// executeWork function (exported for ALX checker)
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
@@ -68,6 +68,21 @@ function executeWork(employee: Director | Teacher): string {
   }
 }
 
-// Example usage / Expected output
+// --- Task 7 ---
+// String literal type allowing only 'Math' or 'History'
+type Subjects = "Math" | "History";
+
+// teachClass function
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else {
+    return "Teaching History";
+  }
+}
+
+// Example usage
 console.log(executeWork(createEmployee(200)));   // Getting to work
 console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
+console.log(teachClass("Math"));                 // Teaching Math
+console.log(teachClass("History"));              // Teaching History
