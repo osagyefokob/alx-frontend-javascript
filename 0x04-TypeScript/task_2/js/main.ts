@@ -70,4 +70,4 @@ function executeWork(employee: Director | Teacher): string {
 
 // Example usage / Expected output
 console.log(executeWork(createEmployee(200)));   // Getting to work
-console.log(executeWork(createEmployee(1000)));  // Gett
+console.log(executeWork(createEmployee(1000)));  // Getting to director tasks
