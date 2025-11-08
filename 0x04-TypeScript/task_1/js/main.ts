@@ -42,5 +42,21 @@ const teacher3: Teacher = {
 
 console.log(teacher3);
 
+// Directors interface extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Example director
+const director1: Directors = {
+  firstName: "John",
+  lastName: "Doe",
+  location: "London",
+  fullTimeEmployee: true,
+  numberOfReports: 17
+};
+
+console.log(director1);
+
 // Note: readonly prevents reassignment after init (uncomment to verify TypeScript error)
 // teacher3.firstName = "Peter"; // Error: cannot assign to 'firstName' because it is a read-only property
