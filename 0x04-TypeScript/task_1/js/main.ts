@@ -14,6 +14,11 @@ interface Teacher {
   [key: string]: any;
 }
 
+// Directors interface extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
 // Example teachers
 const teacher1: Teacher = {
   firstName: "John",
@@ -31,7 +36,7 @@ const teacher2: Teacher = {
   contract: true
 };
 
-// Task example object (the one the tests show)
+// Task example object
 const teacher3: Teacher = {
   firstName: "John",
   fullTimeEmployee: false,
@@ -39,13 +44,6 @@ const teacher3: Teacher = {
   location: "London",
   contract: false
 };
-
-console.log(teacher3);
-
-// Directors interface extends Teacher
-interface Directors extends Teacher {
-  numberOfReports: number;
-}
 
 // Example director
 const director1: Directors = {
@@ -56,7 +54,5 @@ const director1: Directors = {
   numberOfReports: 17
 };
 
+console.log(teacher3);
 console.log(director1);
-
-// Note: readonly prevents reassignment after init (uncomment to verify TypeScript error)
-// teacher3.firstName = "Peter"; // Error: cannot assign to 'firstName' because it is a read-only property
