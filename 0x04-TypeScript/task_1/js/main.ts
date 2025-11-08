@@ -19,6 +19,7 @@ interface Directors extends Teacher {
   numberOfReports: number;
 }
 
+
 // Example teachers
 const teacher1: Teacher = {
   firstName: "John",
