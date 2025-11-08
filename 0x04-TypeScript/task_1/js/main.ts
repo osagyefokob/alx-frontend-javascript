@@ -14,10 +14,19 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Directors interface extends Teacher
-interface Director extends Teacher {
-  numberOfReports: number;
+// Interface describing the printTeacher function
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
 }
+
+// Function implementation using classic syntax
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
+}
+
+// Example usage
+console.log(printTeacher("John", "Doe")); // Expected output: J. Doe
+
 
 // Interface describing the printTeacher function
 interface printTeacherFunction {
