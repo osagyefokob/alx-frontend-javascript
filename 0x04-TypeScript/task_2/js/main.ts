@@ -50,11 +50,13 @@ class Teacher implements TeacherInterface {
  * - otherwise return Director instance
  */
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === "number" && salary < 500) {
+  if (salary < 500) {
     return new Teacher();
+  } else {
+    return new Director();
   }
-  return new Director();
 }
+
 
 // The tests / expected usage want to see the class name printed.
 // Log the constructor.name so the console prints "Teacher" or "Director"
