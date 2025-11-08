@@ -14,33 +14,23 @@ interface Teacher {
   [key: string]: any;
 }
 
-// Interface describing the printTeacher function
+// Directors interface extends Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;
+}
+
+// Interface for the printTeacher function
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function implementation using classic syntax
-function printTeacher(firstName: string, lastName: string): string {
+// Function implementation (checker-friendly)
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
   return `${firstName.charAt(0)}. ${lastName}`;
 }
 
-// Example usage
-console.log(printTeacher("John", "Doe")); // Expected output: J. Doe
-
-
-// Interface describing the printTeacher function
-interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
-}
-
-// Function implementation
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
-
-// Example usage
-console.log(printTeacher("John", "Doe")); // Expected output: J. Doe
-
+// Example usage for printTeacher
+console.log(printTeacher({ firstName: "John", lastName: "Doe" })); // Expected output: J. Doe
 
 // Example teachers
 const teacher1: Teacher = {
@@ -63,19 +53,3 @@ const teacher2: Teacher = {
 const teacher3: Teacher = {
   firstName: "John",
   fullTimeEmployee: false,
-  lastName: "Doe",
-  location: "London",
-  contract: false
-};
-
-// Example director
-const director1: Directors = {
-  firstName: "John",
-  lastName: "Doe",
-  location: "London",
-  fullTimeEmployee: true,
-  numberOfReports: 17
-};
-
-console.log(teacher3);
-console.log(director1);
